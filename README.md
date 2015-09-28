@@ -13,3 +13,15 @@ MarkDown(
  "Make sure to always code typesafe!"
 )
 ```
+
+## TODO
+
+* Emphasis
+* Lists
+* Links
+* Images
+* Tables
+* Horizontal Rule
+* Line Breaks
+* Youtube videos
+* Complete type safety - MarkDown(Any*) won't do.
