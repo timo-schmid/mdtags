@@ -1,6 +1,6 @@
 package mdtags
 
-class MdTagsSpec extends UnitSpec {
+class MarkDownSpec extends UnitSpec {
 
   "Empty MarkDown" should "return an empty string" in {
     MarkDown().toString() should be ("")
@@ -23,8 +23,8 @@ class MdTagsSpec extends UnitSpec {
       h1("This example uses varargs"),
       h2("See the method MarkDown#apply() for as an example")
     ).toString() should be ("""# This example uses varargs
-                            |
-                            |## See the method MarkDown#apply() for as an example""".stripMargin)
+                              |
+                              |## See the method MarkDown#apply() for as an example""".stripMargin)
   }
 
   "MarkDown can have a text element and" should "return the text" in {
@@ -39,7 +39,11 @@ class MdTagsSpec extends UnitSpec {
       h2("The first subtitle"),
       "This is the first paragraph.",
       h2("This is the second subtitle"),
-      "This is the second paragraph."
+      "This is the second paragraph.",
+      h3("Level 3 Title"),
+      h4("Level 4 Title"),
+      h5("Level 5 Title"),
+      h6("Level 6 Title")
     ).toString() should be ("""# The first title
                               |
                               |## The first subtitle
@@ -48,7 +52,34 @@ class MdTagsSpec extends UnitSpec {
                               |
                               |## This is the second subtitle
                               |
-                              |This is the second paragraph.""".stripMargin)
+                              |This is the second paragraph.
+                              |
+                              |### Level 3 Title
+                              |
+                              |#### Level 4 Title
+                              |
+                              |##### Level 5 Title
+                              |
+                              |###### Level 6 Title""".stripMargin)
+  }
+
+  "MarkDown can contain code elements and" should "return the appropriate MarkDown" in {
+    MarkDown(
+      code(
+        syntax = "java",
+        code = """class Main {
+                 |    public static void main(String[] args) {
+                 |        System.out.println(args.length);
+                 |    }
+                 |}""".stripMargin)
+    ).toString() should be (
+      """```java
+        |class Main {
+        |    public static void main(String[] args) {
+        |        System.out.println(args.length);
+        |    }
+        |}
+        |```""".stripMargin)
   }
 
 }

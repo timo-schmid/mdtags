@@ -4,19 +4,26 @@ class code(val code: String, val syntax: Option[String]) extends MdElement {
 
   lazy val syntaxStr = syntax.getOrElse("")
 
-  lazy val syntaxMarkupStr = syntax match {
-    case None => "None"
-    case Some(s) => s""""\"$s\""""
+  override def convertToString: String = s"```$syntaxStr\n" + code + "\n```"
+
+  override def convertToMarkup(indentSpaces: Int, currentIndent: Int): String = {
+
+    def syntaxLine = syntax match {
+      case None => ""
+      case Some(s) => indent(currentIndent + indentSpaces) + s"""syntax = "$s",\n"""
+    }
+    def codeLines =
+      indent(currentIndent + indentSpaces) +
+      "code = " +
+      formatMarkupString(code, currentIndent + indentSpaces + 7)
+        .substring(currentIndent + indentSpaces + 7) +
+      "\n"
+
+    indent(currentIndent) + "code(\n" +
+      syntaxLine +
+      codeLines +
+      indent(currentIndent) + ")"
   }
-
-  override def convertToString: String = s"""```$syntaxStr
-                                           |$code
-                                           |```""".stripMargin
-
-  override def convertToMarkup(indentSpaces: Int, currentIndent: Int): String =
-    indent(currentIndent) +
-    s"""code(text = "$code"[, syntax = $syntaxMarkupStr])"""
-
 }
 
 object code {
