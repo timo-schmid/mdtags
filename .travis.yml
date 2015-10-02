@@ -1,0 +1,20 @@
+# travis build file
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.m2/repository
+    - $HOME/.sbt
+    - $HOME/.ivy2
+
+language: scala
+
+script:
+  - sbt -no-colors ++$TRAVIS_SCALA_VERSION test
+
+scala:
+  - 2.10.5
+
+jdk:
+  - oraclejdk8
