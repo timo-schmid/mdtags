@@ -2,12 +2,11 @@ package mdtags
 
 class MarkDown(childs: Seq[MarkDownChild]) extends MdElement {
 
-  def childMarkup(indentSpaces: Int, currentIndent: Int): String = {
-    val childMu = childs.map(_.convertToMarkup(indentSpaces, currentIndent)) mkString(",\n")
-    if(childMu.isEmpty) {
+  def childMarkup(implicit indentSpaces: Int): String = {
+    if(childs.isEmpty) {
       ""
     } else {
-      "\n" + childMu + "\n"
+      childs.map((child) => indent(indentSpaces, child.convertToMarkup(indentSpaces))) mkString("\n", ",\n", "\n")
     }
   }
 
@@ -15,11 +14,10 @@ class MarkDown(childs: Seq[MarkDownChild]) extends MdElement {
 
   override def convertToString: String = childs.map(_.convertToString) mkString("\n\n")
 
-  override def convertToMarkup(indentSpaces: Int = 2, currentIndent: Int = 0): String =
-    indent(currentIndent) + "MarkDown(" +
-    childMarkup(indentSpaces, currentIndent + indentSpaces) +
-    indent(currentIndent) + ")"
-
+  override def convertToMarkup(implicit indentSpaces: Int = 2): String =
+    "MarkDown(" +
+      childMarkup +
+    ")"
 }
 
 object MarkDown {

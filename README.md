@@ -11,6 +11,10 @@ Here's an example:
 MarkDown(
   h1("Hello from mdtags!"),
   "Make sure to always code typesafe!",
+  link(
+    link = "http://www.github.com/",
+    text = "This project is hosted on GitHub"
+  ),
   """Feel free to add multi-line strings
     |Like this one, for example!""".stripMargin,
   code(
@@ -30,7 +34,7 @@ MarkDown(
 
 * Emphasis
 * Lists
-* Links
+* ~~Links~~
 * Images
 * Tables
 * Horizontal Rule

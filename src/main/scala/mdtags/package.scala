@@ -6,23 +6,21 @@ package object mdtags {
 
     def convertToString: String = s
 
-    def convertToMarkup(indentSpaces: Int, currentIndent: Int): String =
-      formatMarkupString(s, currentIndent)
+    def convertToMarkup(implicit indentSpaces: Int): String =
+      formatMarkupString(s)
   }
 
   trait MdElementChild[T<:MdElement] extends MarkDownChild {
 
     def mdElement: T
 
-    def convertToString: String =
+    override def convertToString: String =
       mdElement.convertToString
 
-    def convertToMarkup(indentSpaces: Int, currentIndent: Int): String =
-      mdElement.convertToMarkup(indentSpaces, currentIndent)
+    override def convertToMarkup(implicit indentSpaces: Int): String =
+      mdElement.convertToMarkup(indentSpaces)
 
   }
-
-  implicit class MarkDownCodeChild(val mdElement: code) extends MdElementChild[code]
 
   import TitleElement._
 
@@ -49,5 +47,9 @@ package object mdtags {
   implicit class MarkDownH5Child(val mdElement: h5) extends MdElementChild[h5]
 
   implicit class MarkDownH6Child(val mdElement: h6) extends MdElementChild[h6]
+
+  implicit class MarkDownCodeChild(val mdElement: code) extends MdElementChild[code]
+
+  implicit class MarkDownLinkChild(val mdElement: link) extends MdElementChild[link]
 
 }

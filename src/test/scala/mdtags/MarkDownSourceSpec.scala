@@ -25,8 +25,12 @@ class MarkDownSourceSpec extends UnitSpec {
       ),
       code(
         code = "MOVE 1 TO AI-RC"
+      ),
+      link(
+        link = "http://www.google.com/",
+        text = "Google"
       )
-    ).convertToMarkup(2, 0) should be (
+    ).convertToMarkup should be (
       s"""MarkDown(
          |  h1("A title"),
          |  "A string",
@@ -36,16 +40,20 @@ class MarkDownSourceSpec extends UnitSpec {
          |  h5("A level-2 title"),
          |  h6("A level-2 title"),
          |  ${longStringDelim}A multi-line string
-         |    :Lets challenge the code!${longStringDelim}.stripMargin,
+         |    °Lets challenge the code!${longStringDelim}.stripMargin,
          |  code(
          |    syntax = "COBOL",
          |    code = "MOVE 0 TO AI-RC"
          |  ),
          |  code(
          |    code = "MOVE 1 TO AI-RC"
+         |  ),
+         |  link(
+         |    link = "http://www.google.com/",
+         |    text = "Google"
          |  )
          |)"""
-        .stripMargin.replace(":", "|")
+        .stripMargin.replace("°", "|")
     )
   }
 

@@ -43,7 +43,9 @@ class MarkDownSpec extends UnitSpec {
       h3("Level 3 Title"),
       h4("Level 4 Title"),
       h5("Level 5 Title"),
-      h6("Level 6 Title")
+      h6("Level 6 Title"),
+      link("http://www.google.com/", "Google"),
+      link("http://www.gmail.com/")
     ).toString() should be ("""# The first title
                               |
                               |## The first subtitle
@@ -60,7 +62,11 @@ class MarkDownSpec extends UnitSpec {
                               |
                               |##### Level 5 Title
                               |
-                              |###### Level 6 Title""".stripMargin)
+                              |###### Level 6 Title
+                              |
+                              |[Google](http://www.google.com/)
+                              |
+                              |[http://www.gmail.com/](http://www.gmail.com/)""".stripMargin)
   }
 
   "MarkDown can contain code elements and" should "return the appropriate MarkDown" in {

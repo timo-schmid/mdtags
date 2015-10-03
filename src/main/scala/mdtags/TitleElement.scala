@@ -9,9 +9,8 @@ class TitleElement[T](val title: String, val titleLevel: Int) extends MdElement 
 
   override def convertToString: String = s"""${hashes} $title"""
 
-  override def convertToMarkup(indentSpaces: Int, currentIndent: Int): String =
-    indent(currentIndent) + s"""h${titleLevel}("$title")"""
-
+  override def convertToMarkup(implicit indentSpaces: Int): String =
+    s"""h${titleLevel}("$title")"""
 }
 
 /**

@@ -23,6 +23,7 @@ object Readme {
   private val exampleCode = MarkDown(
     h1("Hello from mdtags!"),
     "Make sure to always code typesafe!",
+    link("http://www.github.com/", "This project is hosted on GitHub"),
     """Feel free to add multi-line strings
     |Like this one, for example!""".stripMargin,
     code(
@@ -54,7 +55,7 @@ object Readme {
      h2("TODO"),
      """* Emphasis
        |* Lists
-       |* Links
+       |* ~~Links~~
        |* Images
        |* Tables
        |* Horizontal Rule

@@ -6,23 +6,28 @@ class code(val code: String, val syntax: Option[String]) extends MdElement {
 
   override def convertToString: String = s"```$syntaxStr\n" + code + "\n```"
 
-  override def convertToMarkup(indentSpaces: Int, currentIndent: Int): String = {
+  override def convertToMarkup(implicit indentSpaces: Int): String = {
 
     def syntaxLine = syntax match {
       case None => ""
-      case Some(s) => indent(currentIndent + indentSpaces) + s"""syntax = "$s",\n"""
+      case Some(s) => indent(indentSpaces, s"""syntax = "$s",""") + "\n"
     }
-    def codeLines =
-      indent(currentIndent + indentSpaces) +
-      "code = " +
-      formatMarkupString(code, currentIndent + indentSpaces + 7)
-        .substring(currentIndent + indentSpaces + 7) +
-      "\n"
 
-    indent(currentIndent) + "code(\n" +
+    def codeAssignment = "code = "
+
+    val indentCode = indent(codeAssignment.length, formatMarkupString(code))
+
+    def codeLines =
+      codeAssignment + indentCode.substring(codeAssignment.length)
+
+
+    def indentCodeLines =
+      indent(indentSpaces, codeLines) + "\n"
+
+    "code(\n" +
       syntaxLine +
-      codeLines +
-      indent(currentIndent) + ")"
+      indentCodeLines +
+    ")"
   }
 }
 

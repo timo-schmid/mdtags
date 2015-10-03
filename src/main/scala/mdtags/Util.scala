@@ -2,36 +2,32 @@ package mdtags
 
 private[mdtags] trait Util {
 
-  def indent(currentIndent: Int): String =
-    if(currentIndent > 0) {
-      Array.fill(currentIndent)(" ").mkString("")
-    } else {
-      ""
+  def indent(indentSpaces: Int, text: String): String = {
+    def getIndentString: String =
+      if(indentSpaces > 0) {
+        Array.fill(indentSpaces)(" ").mkString("")
+      } else {
+        ""
+      }
+    text.split("\n").map(getIndentString + _).mkString("\n")
+  }
+
+  def formatMarkupString(s: String): String = {
+
+    def markupMultiLine = {
+      s.split("\\n").filterNot(_.trim.isEmpty).mkString("\n  |")
     }
 
-  def formatMarkupString(s: String, currentIndent: Int): String = {
+    val markupSepEscape = "\"\"\""
 
-    lazy val markupSingleLine = s
-
-    def markupLineSeparator = {
-      "\n" + indent(currentIndent + markupSep.length - 1) + "|"
-    }
-
-    def markupMultiLine(currentIndent: Int) = {
-      var split = s.split("\\n").filterNot(_.trim.equals(""))
-      split.mkString(markupLineSeparator)
-    }
+    val markupSepNoEscape = "\""
 
     def markupSep = if (s.contains("\"") || s.contains("\n")) markupSepEscape else markupSepNoEscape
 
-    def markupSepEscape = "\"\"\""
-
-    def markupSepNoEscape = "\""
-
     if (s.contains("\n")) {
-      indent(currentIndent) + markupSep + markupMultiLine(currentIndent) + markupSep + ".stripMargin"
+      markupSep + markupMultiLine + markupSep + ".stripMargin"
     } else {
-      indent(currentIndent) + markupSep + markupSingleLine + markupSep
+      markupSep + s + markupSep
     }
   }
 
