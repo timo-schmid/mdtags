@@ -26,6 +26,10 @@ MarkDown(
     code = """List("foo", "bar", "baz")
              |  .reverse
              |  .mkString(" - ")""".stripMargin
+  ),
+  image(
+    imageSrc = "https://travis-ci.org/timo-schmid/mdtags.svg?branch=master",
+    altText = "Build status"
   )
 )
 ```
@@ -51,6 +55,8 @@ List("foo", "bar", "baz")
   .reverse
   .mkString(" - ")
 ````
+
+![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
 ```
 
 ## TODO
@@ -58,12 +64,11 @@ List("foo", "bar", "baz")
 * Emphasis
 * Lists
 * ~~Links~~
-* ~~Images~~
+* Images
 * Tables
 * Horizontal Rule
 * Line Breaks
 * Youtube videos
-* ~~Complete type safety - MarkDown(Any*) won't do~~
 * Create an SBT-Plugin to generate docs
 
 ## Build status
