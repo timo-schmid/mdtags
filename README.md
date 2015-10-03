@@ -46,15 +46,15 @@ Make sure to always code typesafe!
 Feel free to add multi-line strings
 Like this one, for example!
 
-````scala
+`````scala
 List(1,2,3).reverse
-````
+`````
 
-````scala
+`````scala
 List("foo", "bar", "baz")
   .reverse
   .mkString(" - ")
-````
+`````
 
 ![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
 ```
