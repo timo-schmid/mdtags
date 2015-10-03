@@ -33,7 +33,7 @@ class MarkDownSpec extends UnitSpec {
     ).toString() should be ("This is just plaintext, without special formatting.")
   }
 
-  "MarkDown can have titles and texts combined and" should "return the appropriate MarkDown" in {
+  "MarkDown can have titles and texts, etc combined and" should "return the appropriate MarkDown" in {
     MarkDown(
       h1("The first title"),
       h2("The first subtitle"),
@@ -45,7 +45,8 @@ class MarkDownSpec extends UnitSpec {
       h5("Level 5 Title"),
       h6("Level 6 Title"),
       link("http://www.google.com/", "Google"),
-      link("http://www.gmail.com/")
+      link("http://www.gmail.com/"),
+      image("my-image.png", "My image")
     ).toString() should be ("""# The first title
                               |
                               |## The first subtitle
@@ -66,7 +67,9 @@ class MarkDownSpec extends UnitSpec {
                               |
                               |[Google](http://www.google.com/)
                               |
-                              |[http://www.gmail.com/](http://www.gmail.com/)""".stripMargin)
+                              |[http://www.gmail.com/](http://www.gmail.com/)
+                              |
+                              |![My image](my-image.png)""".stripMargin)
   }
 
   "MarkDown can contain code elements and" should "return the appropriate MarkDown" in {

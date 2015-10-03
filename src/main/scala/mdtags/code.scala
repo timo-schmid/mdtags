@@ -4,7 +4,10 @@ class code(val code: String, val syntax: Option[String]) extends MdElement {
 
   lazy val syntaxStr = syntax.getOrElse("")
 
-  override def convertToString: String = s"```$syntaxStr\n" + code + "\n```"
+  override def convertToString: String =
+    s"```$syntaxStr\n" +
+      code.replaceAll("```", "````") + // replace all ``` with 4 ticks, to not allow the code to accidentlay end this code block
+      "\n```"
 
   override def convertToMarkup(implicit indentSpaces: Int): String = {
 
@@ -15,7 +18,10 @@ class code(val code: String, val syntax: Option[String]) extends MdElement {
 
     def codeAssignment = "code = "
 
-    val indentCode = indent(codeAssignment.length, formatMarkupString(code))
+    val indentCode = indent(
+      codeAssignment.length,
+      formatMarkupString(code)
+    )
 
     def codeLines =
       codeAssignment + indentCode.substring(codeAssignment.length)

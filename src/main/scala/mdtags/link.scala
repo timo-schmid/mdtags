@@ -1,8 +1,5 @@
 package mdtags
 
-/**
- * Created by timo on 02.10.15.
- */
 class link(val link: String, val text: String) extends MdElement {
 
   override def convertToString: String = s"[${text}](${link})"

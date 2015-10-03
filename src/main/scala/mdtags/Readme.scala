@@ -35,7 +35,8 @@ object Readme {
                |  .reverse
                |  .mkString(" - ")""".stripMargin,
       syntax = "scala"
-    )
+    ),
+    image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status")
   )
 
   /**
@@ -52,6 +53,11 @@ object Readme {
        syntax = "scala",
        code = exampleCode.convertToMarkup()
      ),
+     "The example code would render this MarkDown:",
+     code(
+       syntax = "markdown",
+       code = exampleCode.convertToString
+     ),
      h2("TODO"),
      """* Emphasis
        |* Lists
@@ -61,8 +67,9 @@ object Readme {
        |* Horizontal Rule
        |* Line Breaks
        |* Youtube videos
-       |* ~~Complete type safety - MarkDown(Any*) won't do~~
-       |* Create an SBT-Plugin to generate docs""".stripMargin
+       |* Create an SBT-Plugin to generate docs""".stripMargin,
+     h2("Build status"),
+     image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status")
   )
 
   def main(args: Array[String]): Unit = {

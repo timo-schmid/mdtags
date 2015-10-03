@@ -29,6 +29,10 @@ class MarkDownSourceSpec extends UnitSpec {
       link(
         link = "http://www.google.com/",
         text = "Google"
+      ),
+      image(
+        imageSrc = "my-image.png",
+        altText = "My image"
       )
     ).convertToMarkup should be (
       s"""MarkDown(
@@ -51,6 +55,10 @@ class MarkDownSourceSpec extends UnitSpec {
          |  link(
          |    link = "http://www.google.com/",
          |    text = "Google"
+         |  ),
+         |  image(
+         |    imageSrc = "my-image.png",
+         |    altText = "My image"
          |  )
          |)"""
         .stripMargin.replace("°", "|")

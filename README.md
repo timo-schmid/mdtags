@@ -30,15 +30,42 @@ MarkDown(
 )
 ```
 
+The example code would render this MarkDown:
+
+```markdown
+# Hello from mdtags!
+
+Make sure to always code typesafe!
+
+[This project is hosted on GitHub](http://www.github.com/)
+
+Feel free to add multi-line strings
+Like this one, for example!
+
+````scala
+List(1,2,3).reverse
+````
+
+````scala
+List("foo", "bar", "baz")
+  .reverse
+  .mkString(" - ")
+````
+```
+
 ## TODO
 
 * Emphasis
 * Lists
 * ~~Links~~
-* Images
+* ~~Images~~
 * Tables
 * Horizontal Rule
 * Line Breaks
 * Youtube videos
 * ~~Complete type safety - MarkDown(Any*) won't do~~
 * Create an SBT-Plugin to generate docs
+
+## Build status
+
+![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)

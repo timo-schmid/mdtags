@@ -52,4 +52,6 @@ package object mdtags {
 
   implicit class MarkDownLinkChild(val mdElement: link) extends MdElementChild[link]
 
+  implicit class MarkDownImageChild(val mdElement: image) extends MdElementChild[image]
+
 }
