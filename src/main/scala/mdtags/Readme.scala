@@ -5,6 +5,7 @@ object Readme {
   private case class Example(title: String, text: String, markdown: MarkDown)
 
   // an example code
+  /*
   private val examples = List(
     new Example(
       "Headers",
@@ -19,13 +20,16 @@ object Readme {
       )
     )
   )
+  */
 
-  private val exampleCode = MarkDown(
+  val exampleCode = MarkDown(
     h1("Hello from mdtags!"),
     "Make sure to always code typesafe!",
     link("http://www.github.com/", "This project is hosted on GitHub"),
     """Feel free to add multi-line strings
     |Like this one, for example!""".stripMargin,
+    "The code-element works too, but it does not correctly render on github.",
+    /*
     code(
       code = "List(1,2,3).reverse",
       syntax = "scala"
@@ -36,6 +40,7 @@ object Readme {
                |  .mkString(" - ")""".stripMargin,
       syntax = "scala"
     ),
+    */
     image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status")
   )
 

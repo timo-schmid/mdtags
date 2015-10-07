@@ -1,6 +1,6 @@
 package mdtags
 
-class MarkDown(childs: Seq[MarkDownChild]) extends MdElement {
+class MarkDown(val childs: Seq[MarkDownChild]) extends MdElement {
 
   def childMarkup(implicit indentSpaces: Int): String = {
     if(childs.isEmpty) {
