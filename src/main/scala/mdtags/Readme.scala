@@ -28,7 +28,7 @@ object Readme {
     link("http://www.github.com/", "This project is hosted on GitHub"),
     """Feel free to add multi-line strings
     |Like this one, for example!""".stripMargin,
-    "The code-element works too, but it does not correctly render on github.",
+    "The code-element works too, but sadly it does not render correctly on github (inside anther code element).",
     /*
     code(
       code = "List(1,2,3).reverse",
