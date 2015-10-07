@@ -20,7 +20,6 @@ bintray.Keys.repository in bintray.Keys.bintray := "maven"
 
 bintray.Keys.bintrayOrganization in bintray.Keys.bintray := None
 
-// undecided
 licenses += ("Apache 2.0", url("http://opensource.org/licenses/Apache-2.0"))
 
 lazy val compileScalastyle = taskKey[Unit]("testScalastyle")
