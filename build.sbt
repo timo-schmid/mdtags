@@ -16,9 +16,9 @@ publishMavenStyle := false
 
 // bintrayPublishSettings
 
-bintray.Keys.repository in bintray.Keys.bintray := "maven"
+bintrayRepository := "sbt-plugins"
 
-bintray.Keys.bintrayOrganization in bintray.Keys.bintray := None
+bintrayOrganization := None
 
 licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0"))
 
