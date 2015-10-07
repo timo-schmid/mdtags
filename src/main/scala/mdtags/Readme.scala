@@ -48,7 +48,7 @@ object Readme {
    * The content that will be written to the README file,
    * defined in mdtags
    */
-  private val readmeMarkdown: MarkDown = MarkDown(
+   private val readmeMarkdown: MarkDown = MarkDown(
      h1("mdtags - Typesafe MarkDown in Scala"),
      h2("What is mdtags?"),
      """The idea for mdtags is stolen from scala-js: It enables you to
@@ -75,8 +75,11 @@ object Readme {
        |* Create an SBT-Plugin to generate docs""".stripMargin,
      h2("Build status"),
      image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status"),
-     image("https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github", "Test coverage")
-  )
+     link(
+        "https://coveralls.io/github/timo-schmid/mdtags?branch=master",
+        image("https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github", "Coverage Status")
+     )
+   )
 
   def main(args: Array[String]): Unit = {
     writeToReadme(readmeMarkdown.convertToString)

@@ -58,4 +58,4 @@ The code-element works too, but it does not correctly render on github.
 
 ![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
 
-![Test coverage](https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github)
+[![Coverage Status](https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github)](https://coveralls.io/github/timo-schmid/mdtags?branch=master)
