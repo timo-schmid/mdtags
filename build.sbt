@@ -14,7 +14,7 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 
 publishMavenStyle := false
 
-bintrayPublishSettings
+// bintrayPublishSettings
 
 bintray.Keys.repository in bintray.Keys.bintray := "maven"
 
