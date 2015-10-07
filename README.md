@@ -17,16 +17,7 @@ MarkDown(
   ),
   """Feel free to add multi-line strings
     |Like this one, for example!""".stripMargin,
-  code(
-    syntax = "scala",
-    code = "List(1,2,3).reverse"
-  ),
-  code(
-    syntax = "scala",
-    code = """List("foo", "bar", "baz")
-             |  .reverse
-             |  .mkString(" - ")""".stripMargin
-  ),
+  "The code-element works too, but it does not correctly render on github.",
   image(
     imageSrc = "https://travis-ci.org/timo-schmid/mdtags.svg?branch=master",
     altText = "Build status"
@@ -46,15 +37,7 @@ Make sure to always code typesafe!
 Feel free to add multi-line strings
 Like this one, for example!
 
-``````scala
-List(1,2,3).reverse
-``````
-
-``````scala
-List("foo", "bar", "baz")
-  .reverse
-  .mkString(" - ")
-``````
+The code-element works too, but it does not correctly render on github.
 
 ![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
 ```
@@ -74,3 +57,5 @@ List("foo", "bar", "baz")
 ## Build status
 
 ![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
+
+![Test coverage](https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github)

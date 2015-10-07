@@ -74,7 +74,8 @@ object Readme {
        |* Youtube videos
        |* Create an SBT-Plugin to generate docs""".stripMargin,
      h2("Build status"),
-     image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status")
+     image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status"),
+     image("https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github", "Test coverage")
   )
 
   def main(args: Array[String]): Unit = {
