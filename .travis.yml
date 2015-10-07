@@ -6,7 +6,7 @@ cache:
   - "$HOME/.ivy2"
 language: scala
 script:
-- sbt -no-colors ++$TRAVIS_SCALA_VERSION coverage test
+- sbt -no-colors ++$TRAVIS_SCALA_VERSION clean coverage test
 scala:
 - 2.10.5
 jdk:
