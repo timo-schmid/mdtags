@@ -17,7 +17,7 @@ MarkDown(
   ),
   """Feel free to add multi-line strings
     |Like this one, for example!""".stripMargin,
-  "The code-element works too, but it does not correctly render on github.",
+  "The code-element works too, but sadly it does not render correctly on github (inside anther code element).",
   image(
     imageSrc = "https://travis-ci.org/timo-schmid/mdtags.svg?branch=master",
     altText = "Build status"
@@ -37,7 +37,7 @@ Make sure to always code typesafe!
 Feel free to add multi-line strings
 Like this one, for example!
 
-The code-element works too, but it does not correctly render on github.
+The code-element works too, but sadly it does not render correctly on github (inside anther code element).
 
 ![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
 ```
@@ -56,6 +56,4 @@ The code-element works too, but it does not correctly render on github.
 
 ## Build status
 
-![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
-
-[![Coverage Status](https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github)](https://coveralls.io/github/timo-schmid/mdtags?branch=master)
+[![Build Status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)](https://travis-ci.org/timo-schmid/mdtags) [![Coverage Status](https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github)](https://coveralls.io/github/timo-schmid/mdtags?branch=master)
