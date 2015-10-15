@@ -7,7 +7,7 @@ class TitleElement[T](val title: String, val titleLevel: Int) extends MdElement 
 
   lazy val hashes = (for(i <- 0 to titleLevel) yield "").mkString("#")
 
-  override def convertToString: String = s"""${hashes} $title"""
+  override def convertToString: String = s"""${hashes} ${title}"""
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
     s"""h${titleLevel}("$title")"""

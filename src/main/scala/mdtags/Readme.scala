@@ -74,7 +74,10 @@ object Readme {
        |* Youtube videos
        |* Create an SBT-Plugin to generate docs""".stripMargin,
      h2("Build status"),
-     image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status"),
+     link(
+       "https://travis-ci.org/timo-schmid/mdtags",
+       image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build Status")
+     ) &
      link(
         "https://coveralls.io/github/timo-schmid/mdtags?branch=master",
         image("https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github", "Coverage Status")
