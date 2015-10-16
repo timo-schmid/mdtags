@@ -50,7 +50,11 @@ package object mdtags {
 
   implicit class MarkDownImageChild(val mdElement: image) extends MdElementChild[image] with MdInlineElement
 
-  implicit class MarkDownBChild(val mdElement: b) extends MdElementChild[b] with MdInlineElement
+  implicit class MarkDownBoldChild(val mdElement: b) extends MdElementChild[b] with MdInlineElement
+
+  implicit class MarkDownItalicChild(val mdElement: i) extends MdElementChild[i] with MdInlineElement
+
+  implicit class MarkDownStrikethroughChild(val mdElement: s) extends MdElementChild[s] with MdInlineElement
 
   implicit class MarkDownInlineElementChild(val mdElements: MarkDownInlineElements) extends MarkDownChild with MdInlineElement {
 

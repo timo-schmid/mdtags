@@ -1,6 +1,12 @@
 package mdtags
 
+import scala.language.postfixOps
+
 private[mdtags] trait Util {
+
+  def pad(chars: Int, chr: Char): String = pad(chars, chr toString)
+
+  def pad(chars: Int, str: String): String = List() padTo(chars, str toString) mkString
 
   def indent(indentSpaces: Int, text: String): String = {
     def getIndentString: String =

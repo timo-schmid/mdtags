@@ -1,24 +1,22 @@
 package mdtags
 
-import scala.language.postfixOps
+class s(val text: String) extends MdElement {
 
-class b(val text: String) extends MdElement {
-
-  val sepChar = '*' // TODO could be configurable
+  val sepChar = '~'
 
   val sep: String = pad(2, sepChar)
 
   override def convertToString: String = sep + text + sep
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
-    "b(\n" +
+    "strike(\n" +
       indent(indentSpaces, "text = " + formatMarkupString(text)) + ",\n" +
     ")"
 
 }
 
-object b {
+object s {
 
-  def apply(text: String): b = new b(text)
+  def apply(text: String): s = new s(text)
 
 }

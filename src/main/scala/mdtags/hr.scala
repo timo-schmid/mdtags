@@ -2,9 +2,9 @@ package mdtags
 
 class hr(val separatorChar: Char = '*') extends MdElement {
 
-  override def convertToString: String = List() padTo(3, separatorChar toString) mkString
+  override def convertToString: String = pad(3, separatorChar)
 
-  def markupSeparatorChar = if(separatorChar == '*') { "" } else { "separatorChar = '" + separatorChar + "'" }
+  lazy val markupSeparatorChar = if(separatorChar == '*') { "" } else { "separatorChar = '" + separatorChar + "'" }
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
     "br(" + markupSeparatorChar + ")"
@@ -13,7 +13,7 @@ class hr(val separatorChar: Char = '*') extends MdElement {
 
 object hr {
 
-  def apply(chr: Char = '*') = chr match {
+  def apply(chr: Char = '*'): hr = chr match {
     case '*' => new hr(chr)
     case '-' => new hr(chr)
     case '_' => new hr(chr)

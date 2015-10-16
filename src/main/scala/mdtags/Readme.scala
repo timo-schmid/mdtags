@@ -31,18 +31,6 @@ object Readme {
     """Feel free to add multi-line strings
     |Like this one, for example!""".stripMargin,
     "The code-element works too, but sadly it does not render correctly on github (inside anther code element).",
-    /*
-    code(
-      code = "List(1,2,3).reverse",
-      syntax = "scala"
-    ),
-    code(
-      code = """List("foo", "bar", "baz")
-               |  .reverse
-               |  .mkString(" - ")""".stripMargin,
-      syntax = "scala"
-    ),
-    */
     image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build status")
   )
 
@@ -69,8 +57,8 @@ object Readme {
     b("Easy Tasks"),
     """* Emphasis
       |  * ~~Bold~~
-      |  * Italic
-      |  * Strikethrough
+      |  * ~~Italic~~
+      |  * ~~Strikethrough~~
       |* Lists
       |* ~~Links~~
       |* ~~Images~~
@@ -80,7 +68,14 @@ object Readme {
       |* Youtube videos""".stripMargin,
     hr(),
     b("More advanced tasks"),
-    "* Create an SBT-Plugin to generate docs",
+    """* Create an SBT-Plugin to generate docs
+      |* Test-Cases
+      |  * Bold
+      |  * Italic
+      |  * Strikethrough
+      |  * Horizontal Rule
+      |  * YouTube
+    """.stripMargin,
     h2("Build status"),
     link(
       "https://travis-ci.org/timo-schmid/mdtags",
