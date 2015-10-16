@@ -55,7 +55,7 @@ object Readme {
     ),
     h2("TODO"),
     b("Easy Tasks"),
-    """* Emphasis
+    """* ~~Emphasis~~
       |  * ~~Bold~~
       |  * ~~Italic~~
       |  * ~~Strikethrough~~
@@ -65,7 +65,7 @@ object Readme {
       |* Tables
       |* ~~Horizontal Rule~~
       |* ~~Line Breaks~~
-      |* Youtube videos""".stripMargin,
+      |* ~~Youtube videos~~""".stripMargin,
     hr(),
     b("More advanced tasks"),
     """* Create an SBT-Plugin to generate docs
@@ -74,7 +74,7 @@ object Readme {
       |  * Italic
       |  * Strikethrough
       |  * Horizontal Rule
-      |  * YouTube
+      |  * YouTube videos
     """.stripMargin,
     h2("Build status"),
     link(

@@ -46,23 +46,30 @@ The code-element works too, but sadly it does not render correctly on github (in
 
 **Easy Tasks**
 
-* Emphasis
+* ~~Emphasis~~
   * ~~Bold~~
-  * Italic
-  * Strikethrough
+  * ~~Italic~~
+  * ~~Strikethrough~~
 * Lists
 * ~~Links~~
 * ~~Images~~
 * Tables
 * ~~Horizontal Rule~~
 * ~~Line Breaks~~
-* Youtube videos
+* ~~Youtube videos~~
 
 ***
 
 **More advanced tasks**
 
 * Create an SBT-Plugin to generate docs
+* Test-Cases
+  * Bold
+  * Italic
+  * Strikethrough
+  * Horizontal Rule
+  * YouTube videos
+    
 
 ## Build status
 
