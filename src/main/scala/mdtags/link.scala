@@ -6,8 +6,8 @@ class link(val link: String, val mdElement: MdElement) extends MdElement {
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
     "link(\n" +
-    indent(indentSpaces, "link = " + formatMarkupString(link)) + ",\n" +
-    indent(indentSpaces, "text = " + mdElement.convertToMarkup) + "\n" +
+      indent(indentSpaces, "link = " + formatMarkupString(link)) + ",\n" +
+      indent(indentSpaces, "text = " + mdElement.convertToMarkup) + "\n" +
     ")"
 }
 

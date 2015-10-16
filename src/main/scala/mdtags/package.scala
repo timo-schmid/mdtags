@@ -1,5 +1,7 @@
 package object mdtags {
 
+  import TitleElement._
+
   sealed private[mdtags] trait MarkDownChild extends MdElement
 
   type MarkDownInlineElements = List[MdInlineElement]
@@ -15,8 +17,6 @@ package object mdtags {
       mdElement.convertToMarkup(indentSpaces)
 
   }
-
-  import TitleElement._
 
   def h1(title: String): h1 = new h1(title)
 
@@ -44,16 +44,20 @@ package object mdtags {
 
   implicit class MarkDownCodeChild(val mdElement: code) extends MdElementChild[code] // TODO create an inline mode for code
 
+  implicit class MarkDownHrChild(val mdElement: hr) extends MdElementChild[hr]
+
   implicit class MarkDownLinkChild(val mdElement: link) extends MdElementChild[link] with MdInlineElement
 
   implicit class MarkDownImageChild(val mdElement: image) extends MdElementChild[image] with MdInlineElement
+
+  implicit class MarkDownBChild(val mdElement: b) extends MdElementChild[b] with MdInlineElement
 
   implicit class MarkDownInlineElementChild(val mdElements: MarkDownInlineElements) extends MarkDownChild with MdInlineElement {
 
     override def convertToString: String =
       mdElements.map(_.convertToString).mkString(" ")
 
-    override def convertToMarkup(implicit indentSpaces: Int): String = "TODO"
+    override def convertToMarkup(implicit indentSpaces: Int): String = ???
 
   }
 

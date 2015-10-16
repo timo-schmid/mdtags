@@ -16,23 +16,23 @@ class code(val code: String, val syntax: Option[String]) extends MdElement {
       case Some(s) => indent(indentSpaces, s"""syntax = "$s",""") + "\n"
     }
 
-    def codeAssignment = "code = "
+    val assignmentStr = "code = "
 
     val indentCode = indent(
-      codeAssignment.length,
+      assignmentStr.length,
       formatMarkupString(code)
     )
 
-    def codeLines =
-      codeAssignment + indentCode.substring(codeAssignment.length)
+    def scalaLines =
+      assignmentStr + indentCode.substring(assignmentStr.length)
 
 
-    def indentCodeLines =
-      indent(indentSpaces, codeLines) + "\n"
+    def indentScalaLines =
+      indent(indentSpaces, scalaLines) + "\n"
 
     "code(\n" +
       syntaxLine +
-      indentCodeLines +
+      indentScalaLines +
     ")"
   }
 }

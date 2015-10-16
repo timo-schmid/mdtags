@@ -44,16 +44,26 @@ The code-element works too, but sadly it does not render correctly on github (in
 
 ## TODO
 
+**Easy Tasks**
+
 * Emphasis
+  * ~~Bold~~
+  * Italic
+  * Strikethrough
 * Lists
 * ~~Links~~
-* Images
+* ~~Images~~
 * Tables
-* Horizontal Rule
-* Line Breaks
+* ~~Horizontal Rule~~
+* ~~Line Breaks~~
 * Youtube videos
+
+***
+
+**More advanced tasks**
+
 * Create an SBT-Plugin to generate docs
 
 ## Build status
 
-[![Build Status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)](https://travis-ci.org/timo-schmid/mdtags) [![Coverage Status](https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github)](https://coveralls.io/github/timo-schmid/mdtags?branch=master)
+[![Build Status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)](https://travis-ci.org/timo-schmid/mdtags) [![Coverage Status](https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github)](https://coveralls.io/github/timo-schmid/mdtags?branch=master) [![Codacy Badge](https://api.codacy.com/project/badge/2f0d123731dd4bcba8bbd525f0083d56)](https://www.codacy.com/app/timo-schmid/mdtags)

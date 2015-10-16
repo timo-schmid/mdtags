@@ -1,5 +1,7 @@
 package mdtags
 
+import java.io.{IOException, FileNotFoundException}
+
 object Readme {
 
   private case class Example(title: String, text: String, markdown: MarkDown)
@@ -48,53 +50,65 @@ object Readme {
    * The content that will be written to the README file,
    * defined in mdtags
    */
-   private val readmeMarkdown: MarkDown = MarkDown(
-     h1("mdtags - Typesafe MarkDown in Scala"),
-     h2("What is mdtags?"),
-     """The idea for mdtags is stolen from scala-js: It enables you to
-       |write Markdown in a typesafe manner in scala.""".stripMargin,
-     "Here's an example:",
-     code(
-       syntax = "scala",
-       code = exampleCode.convertToMarkup()
-     ),
-     "The example code would render this MarkDown:",
-     code(
-       syntax = "markdown",
-       code = exampleCode.convertToString
-     ),
-     h2("TODO"),
-     """* Emphasis
-       |* Lists
-       |* ~~Links~~
-       |* Images
-       |* Tables
-       |* Horizontal Rule
-       |* Line Breaks
-       |* Youtube videos
-       |* Create an SBT-Plugin to generate docs""".stripMargin,
-     h2("Build status"),
-     link(
-       "https://travis-ci.org/timo-schmid/mdtags",
-       image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build Status")
-     ) &
-     link(
-        "https://coveralls.io/github/timo-schmid/mdtags?branch=master",
-        image("https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github", "Coverage Status")
-     )
-   )
+  private val readmeMarkdown: MarkDown = MarkDown(
+    h1("mdtags - Typesafe MarkDown in Scala"),
+    h2("What is mdtags?"),
+    """The idea for mdtags is stolen from scala-js: It enables you to
+      |write Markdown in a typesafe manner in scala.""".stripMargin,
+    "Here's an example:",
+    code(
+      syntax = "scala",
+      code = exampleCode.convertToMarkup()
+    ),
+    "The example code would render this MarkDown:",
+    code(
+      syntax = "markdown",
+      code = exampleCode.convertToString
+    ),
+    h2("TODO"),
+    b("Easy Tasks"),
+    """* Emphasis
+      |  * ~~Bold~~
+      |  * Italic
+      |  * Strikethrough
+      |* Lists
+      |* ~~Links~~
+      |* ~~Images~~
+      |* Tables
+      |* ~~Horizontal Rule~~
+      |* ~~Line Breaks~~
+      |* Youtube videos""".stripMargin,
+    hr(),
+    b("More advanced tasks"),
+    "* Create an SBT-Plugin to generate docs",
+    h2("Build status"),
+    link(
+      "https://travis-ci.org/timo-schmid/mdtags",
+      image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build Status")
+    ) &
+    link(
+      "https://coveralls.io/github/timo-schmid/mdtags?branch=master",
+      image("https://coveralls.io/repos/timo-schmid/mdtags/badge.svg?branch=master&service=github", "Coverage Status")
+    ) &
+    link(
+      "https://www.codacy.com/app/timo-schmid/mdtags",
+      image("https://api.codacy.com/project/badge/2f0d123731dd4bcba8bbd525f0083d56", "Codacy Badge")
+    )
+  )
 
   def main(args: Array[String]): Unit = {
-    writeToReadme(readmeMarkdown.convertToString)
+    writeToFile("README.md", readmeMarkdown.convertToString)
   }
 
   /**
    * Writes a string to the README.md file
    */
-  private def writeToReadme(text: String) = {
-    val pw = new java.io.PrintWriter("README.md")
+  private def writeToFile(file: String, text: String) = {
+    val pw = new java.io.PrintWriter(file)
     try {
       pw.write(text)
+    } catch {
+      case e: IOException => e.printStackTrace()
     } finally {
       pw.close
     }
