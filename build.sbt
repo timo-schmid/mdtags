@@ -6,7 +6,7 @@ name := "mdtags"
 
 organization := "io.mdtags"
 
-scalaVersion := "2.10.5"
+scalaVersion := "2.11.7"
 
 version := "0.1-SNAPSHOT"
 

@@ -44,7 +44,7 @@ class MarkDownSourceSpec extends UnitSpec {
          |  h5("A level-2 title"),
          |  h6("A level-2 title"),
          |  ${longStringDelim}A multi-line string
-         |    °Lets challenge the code!${longStringDelim}.stripMargin,
+         |    %Lets challenge the code!${longStringDelim}.stripMargin,
          |  code(
          |    syntax = "COBOL",
          |    code = "MOVE 0 TO AI-RC"
@@ -61,7 +61,7 @@ class MarkDownSourceSpec extends UnitSpec {
          |    altText = "My image"
          |  )
          |)"""
-        .stripMargin.replace("°", "|")
+        .stripMargin.replace("%", "|")
     )
   }
 
