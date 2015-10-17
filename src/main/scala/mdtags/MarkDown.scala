@@ -10,9 +10,7 @@ class MarkDown(val childs: Seq[MarkDownChild]) extends MdElement {
     }
   }
 
-  override def toString: String = convertToString
-
-  override def convertToString: String = childs.map(_.convertToString) mkString("\n\n")
+  override def toMarkdown(listIndent: Int = 0): String = childs.map(_.toMarkdown()) mkString("\n\n")
 
   override def convertToMarkup(implicit indentSpaces: Int = 2): String =
     "MarkDown(" +

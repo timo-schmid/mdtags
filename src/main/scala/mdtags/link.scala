@@ -2,7 +2,7 @@ package mdtags
 
 class link(val link: String, val mdElement: MdElement) extends MdElement {
 
-  override def convertToString: String = s"[${mdElement.convertToString}](${link})"
+  override def toMarkdown(listIndent: Int = 0): String = s"[${mdElement.toMarkdown()}](${link})"
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
     "link(\n" +

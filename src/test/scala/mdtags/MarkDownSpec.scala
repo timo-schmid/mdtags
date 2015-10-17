@@ -3,26 +3,26 @@ package mdtags
 class MarkDownSpec extends UnitSpec {
 
   "Empty MarkDown" should "return an empty string" in {
-    MarkDown().toString() should be ("")
+    MarkDown().toMarkdown() should be ("")
   }
 
   "MarkDown can have a h1 title and" should "return the appropriate MarkDown" in {
     MarkDown(
       h1("Hello MdTags")
-    ).toString() should be ("# Hello MdTags")
+    ).toMarkdown() should be ("# Hello MdTags")
   }
 
   "MarkDown can have a h2 title and" should "return the appropriate MarkDown" in {
     MarkDown(
       h2("So we meet again, MdTags...")
-    ).toString() should be ("## So we meet again, MdTags...")
+    ).toMarkdown() should be ("## So we meet again, MdTags...")
   }
 
   "MarkDown can have a h1 and h2 title and" should "return the appropriate MarkDown" in {
     MarkDown(
       h1("This example uses varargs"),
       h2("See the method MarkDown#apply() for as an example")
-    ).toString() should be ("""# This example uses varargs
+    ).toMarkdown() should be ("""# This example uses varargs
                               |
                               |## See the method MarkDown#apply() for as an example""".stripMargin)
   }
@@ -30,7 +30,7 @@ class MarkDownSpec extends UnitSpec {
   "MarkDown can have a text element and" should "return the text" in {
     MarkDown(
       "This is just plaintext, without special formatting."
-    ).toString() should be ("This is just plaintext, without special formatting.")
+    ).toMarkdown() should be ("This is just plaintext, without special formatting.")
   }
 
   "MarkDown can have titles and texts, etc combined and" should "return the appropriate MarkDown" in {
@@ -47,7 +47,7 @@ class MarkDownSpec extends UnitSpec {
       link("http://www.google.com/", "Google"),
       link("http://www.gmail.com/"),
       image("my-image.png", "My image")
-    ).toString() should be ("""# The first title
+    ).toMarkdown() should be ("""# The first title
                               |
                               |## The first subtitle
                               |
@@ -81,7 +81,7 @@ class MarkDownSpec extends UnitSpec {
                  |        System.out.println(args.length);
                  |    }
                  |}""".stripMargin)
-    ).toString() should be (
+    ).toMarkdown() should be (
       """```java
         |class Main {
         |    public static void main(String[] args) {
