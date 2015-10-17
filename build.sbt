@@ -8,7 +8,7 @@ organization := "io.mdtags"
 
 scalaVersion := "2.11.7"
 
-version := "0.1-SNAPSHOT"
+version := "1.0-alpha2"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 
