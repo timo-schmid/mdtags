@@ -79,6 +79,7 @@ object Readme {
         "Bold",
         "Italic",
         "Strikethrough",
+        "Lists",
         "Horizontal Rule",
         "Youtube videos"
       )
