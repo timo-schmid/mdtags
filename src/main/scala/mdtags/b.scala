@@ -8,7 +8,7 @@ class b(val text: String) extends MdElement {
 
   val sep: String = pad(2, sepChar)
 
-  override def convertToString: String = sep + text + sep
+  override def toMarkdown(lineIntdent: Int): String = sep + text + sep
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
     "b(\n" +

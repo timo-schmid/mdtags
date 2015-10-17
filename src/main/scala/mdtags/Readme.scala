@@ -1,6 +1,6 @@
 package mdtags
 
-import java.io.{IOException, FileNotFoundException}
+import scala.util.{Try, Success, Failure}
 
 object Readme {
 
@@ -51,32 +51,44 @@ object Readme {
     "The example code would render this MarkDown:",
     code(
       syntax = "markdown",
-      code = exampleCode.convertToString
+      code = exampleCode.toMarkdown()
     ),
     h2("TODO"),
     b("Easy Tasks"),
-    """* ~~Emphasis~~
-      |  * ~~Bold~~
-      |  * ~~Italic~~
-      |  * ~~Strikethrough~~
-      |* Lists
-      |* ~~Links~~
-      |* ~~Images~~
-      |* Tables
-      |* ~~Horizontal Rule~~
-      |* ~~Line Breaks~~
-      |* ~~Youtube videos~~""".stripMargin,
+    list(
+      s("Emphasis"),
+      list(
+        s("Bold"),
+        s("Italic"),
+        s("Strikethrough")
+      ),
+      s("Lists"),
+      s("Links"),
+      s("Images"),
+      "Tables",
+      s("Horizontal Rule"),
+      s("Line Breaks"),
+      s("Youtube videos")
+    ),
     hr(),
     b("More advanced tasks"),
-    """* Create an SBT-Plugin to generate docs
-      |* Test-Cases
-      |  * Bold
-      |  * Italic
-      |  * Strikethrough
-      |  * Horizontal Rule
-      |  * YouTube videos
-    """.stripMargin,
+    list(
+      "Create an sbt-plugin to generate the docs",
+      "Test Cases",
+      list(
+        "Bold",
+        "Italic",
+        "Strikethrough",
+        "Lists",
+        "Horizontal Rule",
+        "Youtube videos"
+      )
+    ),
     h2("Build status"),
+    link(
+      "https://bintray.com/timo-schmid/sbt-plugins/mdtags/_latestVersion",
+      image("https://api.bintray.com/packages/timo-schmid/sbt-plugins/mdtags/images/download.svg", "Download")
+    ) &
     link(
       "https://travis-ci.org/timo-schmid/mdtags",
       image("https://travis-ci.org/timo-schmid/mdtags.svg?branch=master", "Build Status")
@@ -92,7 +104,7 @@ object Readme {
   )
 
   def main(args: Array[String]): Unit = {
-    writeToFile("README.md", readmeMarkdown.convertToString)
+    writeToFile("README.md", readmeMarkdown.toMarkdown())
   }
 
   /**
@@ -100,13 +112,13 @@ object Readme {
    */
   private def writeToFile(file: String, text: String) = {
     val pw = new java.io.PrintWriter(file)
-    try {
+    Try {
       pw.write(text)
-    } catch {
-      case e: IOException => e.printStackTrace()
-    } finally {
-      pw.close
+    } match {
+      case Success(_) =>
+      case Failure(e) => e.printStackTrace();
     }
+    pw.close()
   }
 
 }

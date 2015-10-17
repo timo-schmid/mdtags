@@ -1,9 +1,6 @@
 package mdtags
 
-/**
- * Created by timo on 16.10.15.
- */
-trait MdInlineElement extends MdElement {
+trait MdInlineElement extends MdListChild {
 
   def append(mdElement: MdInlineElement): List[MdInlineElement] = List(this, mdElement)
 

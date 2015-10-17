@@ -2,7 +2,7 @@ package mdtags
 
 class image(val imageSrc: String, val altText: String) extends MdElement {
 
-  override def convertToString: String = s"![${altText}](${imageSrc})"
+  override def toMarkdown(listIndent: Int = 0): String = s"![${altText}](${imageSrc})"
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
     "image(\n" +

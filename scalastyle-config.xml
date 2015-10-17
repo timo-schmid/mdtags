@@ -4,7 +4,7 @@
     <check level="error" class="org.scalastyle.file.FileTabChecker" enabled="true"></check>
     <check level="error" class="org.scalastyle.file.FileLengthChecker" enabled="true">
         <parameters>
-            <parameter name="maxFileLength"><![CDATA[120]]></parameter>
+            <parameter name="maxFileLength"><![CDATA[200]]></parameter>
         </parameters>
     </check>
     <check level="warning" class="org.scalastyle.file.HeaderMatchesChecker" enabled="false">

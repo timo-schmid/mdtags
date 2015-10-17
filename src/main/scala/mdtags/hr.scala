@@ -2,7 +2,7 @@ package mdtags
 
 class hr(val separatorChar: Char = '*') extends MdElement {
 
-  override def convertToString: String = pad(3, separatorChar)
+  override def toMarkdown(listIndent: Int = 0): String = pad(3, separatorChar)
 
   lazy val markupSeparatorChar = if(separatorChar == '*') { "" } else { "separatorChar = '" + separatorChar + "'" }
 

@@ -4,7 +4,7 @@ class code(val code: String, val syntax: Option[String]) extends MdElement {
 
   lazy val syntaxStr = syntax.getOrElse("")
 
-  override def convertToString: String =
+  override def toMarkdown(listIndent: Int = 0): String =
     s"```$syntaxStr\n" +
       code.replaceAll("```", "````") + // replace all ``` with 4 ticks, to not allow the code to accidentlay end this code block
       "\n```"
