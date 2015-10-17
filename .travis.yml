@@ -27,7 +27,7 @@ after_success:
     sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" &&
     TAG="$(git show-ref --tags | grep $(git rev-list -1 HEAD) | cut -d '/' -f 3)" &&
     test ! -z "$TAG" && 
-    sbt -no-colors ++$TRAVIS_SCALA_VERSION 'set version := System.getenv("TAG")' publish
+    TAG="$TAG" sbt -no-colors ++$TRAVIS_SCALA_VERSION 'set version := System.getenv("TAG")' publish
 # Publish coveralls report
   - test "${TRAVIS_PULL_REQUEST}" = 'false' &&
     test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
