@@ -1,6 +1,6 @@
 package mdtags
 
-class list(childElements: Seq[MdElement]) extends MdElement with MdElementChild[list] {
+private[mdtags] class list(childElements: Seq[MdListChild]) extends MdListChild with MdElementChild[list] {
 
   override def mdElement = this
 
@@ -18,7 +18,6 @@ class list(childElements: Seq[MdElement]) extends MdElement with MdElementChild[
           }
         }
       }.mkString("\n")
-      // childElements.map(_.toMarkdown("")).mkString(listPrefix, "\n" + listPrefix, "")
     else
       ""
   }
@@ -31,8 +30,6 @@ class list(childElements: Seq[MdElement]) extends MdElement with MdElementChild[
 
 object list {
 
-  def apply(): list = new list(Seq()) // is an empty constructor really useful?
-
-  def apply(childs: MarkDownChild*): list = new list(childs)
+  def apply(mandatoryFirstChild: MdListChild, childs: MdListChild*): list = new list(Seq(mandatoryFirstChild) ++ childs)
 
 }

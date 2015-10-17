@@ -66,8 +66,8 @@ The code-element works too, but sadly it does not render correctly on github (in
 * Test Cases
   * Bold
   * Italic
-  * ~~Lists~~
   * Strikethrough
+  * Lists
   * Horizontal Rule
   * Youtube videos
 
