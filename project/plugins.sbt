@@ -20,3 +20,5 @@ resolvers += Classpaths.typesafeReleases
 
 resolvers += "jgit-repo" at "http://download.eclipse.org/jgit/maven"
 
+resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/"
+
