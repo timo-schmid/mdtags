@@ -15,17 +15,15 @@ private[mdtags] class TableBuilder( val headerRow: Boolean,
     throw new IllegalArgumentException("Tables must have at least one column")
   }
 
-  if(currentCol > cols -1) {
-    throw new IllegalStateException(s"Overflow: current col is larger than ${cols - 1}")
-  }
+  private lazy val headerCols = if(headerRow) cols else 0
 
-  if(currentRow > maxRows) {
-    throw new IllegalStateException(s"Overflow: current row is larger than ${rows - 1}")
-  }
+  private lazy val expectedCols = rows * cols + headerCols
+
+  private lazy val actualCols = map.foldLeft(0)(_ + _._2.size)
+
+  private lazy val canBuild = expectedCols == actualCols
 
   private lazy val maxRows = if(headerRow) rows + 1 else rows
-
-  private lazy val canBuild = currentCol == 0 && currentRow == maxRows
 
   private def nextMap(mdInlineElement: MdInlineElement): Map[Int,Map[Int,MdInlineElement]] = {
     def subMap = map.getOrElse(currentRow, Map()) + ((currentCol, mdInlineElement))
@@ -39,6 +37,6 @@ private[mdtags] class TableBuilder( val headerRow: Boolean,
   def apply(mdInlineElement: MdInlineElement): TableBuilder =
     new TableBuilder(headerRow, rows, cols, nextMap(mdInlineElement), nextRow, nextCol)
 
-  def build(): table = if(canBuild) new table(headerRow, map) else throw new IllegalStateException("Cannot build yet.")
+  def build(): table = if(canBuild) new table(headerRow, map) else throw new IllegalStateException(s"Cannot build table: expected ${expectedCols} but got ${actualCols}")
 
 }
