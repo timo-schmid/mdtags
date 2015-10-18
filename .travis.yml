@@ -26,7 +26,7 @@ after_success:
   ( test "${TRAVIS_SCALA_VERSION}" = "2.10.6" || test "${TRAVIS_SCALA_VERSION}" = "2.11.7" ) &&
   sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" && 
   test ! -z "$TRAVIS_TAG" &&
-  sbt -no-colors ++$TRAVIS_SCALA_VERSION 'set version := System.getenv("TRAVIS_TAG")' publish
+  sbt -no-colors ++$TRAVIS_SCALA_VERSION 'set version := System.getenv("TRAVIS_TAG")' "packageBin" "packageSrc" "packageDoc" "publish"
 - test "${TRAVIS_PULL_REQUEST}" = 'false' &&
   test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
   test "${TRAVIS_SCALA_VERSION}" = "2.11.7" && 
