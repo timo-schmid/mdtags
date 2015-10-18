@@ -8,20 +8,14 @@ private[mdtags] class list(childElements: Seq[MdListChild]) extends MdListChild 
 
   private def listPrefix(listIndent: Int) = indent(listIndent, listPrefixChar + " ")
 
-  def childMarkdown(listIndent: Int): String = {
-    if(childElements.size > 0) {
-      childElements.map {
-        _ match {
-          case list: list => list.toMarkdown(listIndent + 2)
-          case mdElement: MdElement => {
-            listPrefix(listIndent) + mdElement.toMarkdown()
-          }
+  def childMarkdown(listIndent: Int): String = childElements.map {
+      _ match {
+        case list: list => list.toMarkdown(listIndent + 2)
+        case mdElement: MdElement => {
+          listPrefix(listIndent) + mdElement.toMarkdown()
         }
-      }.mkString("\n")
-    } else {
-      ""
-    }
-  }
+      }
+    }.mkString("\n")
 
   override def toMarkdown(listIndent: Int): String = childMarkdown(listIndent)
 
