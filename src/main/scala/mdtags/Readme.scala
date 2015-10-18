@@ -53,39 +53,16 @@ object Readme {
       syntax = "markdown",
       code = exampleCode.toMarkdown()
     ),
-    h2("TODO"),
+    h2("Goals for 1.0"),
     b("Easy Tasks"),
     list(
-      s("Emphasis"),
-      list(
-        s("Bold"),
-        s("Italic"),
-        s("Strikethrough")
-      ),
-      s("Lists"),
-      s("Links"),
-      s("Images"),
-      s("Tables"),
-      s("Horizontal Rule"),
-      s("Line Breaks"),
-      s("Youtube videos"),
-      "Increase test coverage",
       "ScalaDocs"
     ),
     hr(),
     b("More advanced tasks"),
     list(
       "Create an sbt-plugin to generate the docs",
-      "Test Cases",
-      list(
-        "Bold",
-        "Italic",
-        "Strikethrough",
-        "Lists",
-        "Horizontal Rule",
-        "Youtube videos"
-      ),
-      "Switch over to specs2 - much more options available there",
+      s("Switch over to specs2 - much more options available there"),
       "Build - generate & deploy source jar"
     ),
     h2("Build status"),

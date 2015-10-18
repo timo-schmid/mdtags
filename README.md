@@ -42,22 +42,10 @@ The code-element works too, but sadly it does not render correctly on github (in
 ![Build status](https://travis-ci.org/timo-schmid/mdtags.svg?branch=master)
 ```
 
-## TODO
+## Goals for 1.0
 
 **Easy Tasks**
 
-* ~~Emphasis~~
-  * ~~Bold~~
-  * ~~Italic~~
-  * ~~Strikethrough~~
-* ~~Lists~~
-* ~~Links~~
-* ~~Images~~
-* ~~Tables~~
-* ~~Horizontal Rule~~
-* ~~Line Breaks~~
-* ~~Youtube videos~~
-* Increase test coverage
 * ScalaDocs
 
 ***
@@ -65,14 +53,7 @@ The code-element works too, but sadly it does not render correctly on github (in
 **More advanced tasks**
 
 * Create an sbt-plugin to generate the docs
-* Test Cases
-  * Bold
-  * Italic
-  * Strikethrough
-  * Lists
-  * Horizontal Rule
-  * Youtube videos
-* Switch over to specs2 - much more options available there
+* ~~Switch over to specs2 - much more options available there~~
 * Build - generate & deploy source jar
 
 ## Build status
