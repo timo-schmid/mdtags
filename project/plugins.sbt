@@ -10,6 +10,8 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-pgp" % "0.8.3")
 
 addSbtPlugin("me.lessis" % "bintray-sbt" % "0.3.0")
 
+addSbtPlugin("com.codacy" % "sbt-codacy-coverage" % "1.2.1")
+
 resolvers += "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases/"
 
 resolvers += Classpaths.sbtPluginReleases

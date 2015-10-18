@@ -19,17 +19,19 @@ env:
   - secure: b0ZG+1TSRbdGGfScXgZ+t4P1rLvJS75bGCoL0K5WyIOxSuz2ywDjcsXlJJ5kmvOU9PB3DixE0R7SEiRAd9rGRDNUZmlStkPWqRIJPTpHWRNIPGn71IUp5REPQpNUI4NC/dyw8wr0LUVEUWSFSfMaomqUi9MCHdQmBXYdpdbuc6T0qbaUWNwq0nSdUEwd04OmrMExtJvCbGG0x7SOqCxvHeNolZlw/vnzq5SiDcGd138HHrpjz/0FVnQQHb5ztzRgm6nCNYxujnDlYDXZXNVrn+gcgJGCwFx3Ml0w0oeLt1/A/4CzsLmcQxpGyaaqnrFJ0mXpwuQGPfN62FgykSir81LRuLIraPEqPLaG43LgG42JoD1Z1ps3f8fhoW9nGwdlLKuu1bCRd5NtVwvqsIbSppOoRn6QEF03e1+9OTyRpLQCW0r14si2uL6TmVBPjwZQtp1xGMXdw1pe3/oV3VT6tT8qsBgMeOWbBefEVRKeaaDZ608PPYwevxAYuvtK/K9q0/TelaN6QssvzAJg22AkgmB1a29eTm3QM6nuRT7Vy9eJ4Q8fF+6N6rZUi9kY2xn++vhI7KFuJ7NMncYtLC20MSJwRcYllrcorXuF0l60aAdmhkl6aAQFhb8Ql84xxhgBAr3ZXmgKw4lgK2fcvllJwl98a6g3CBr17IiStNMEiVE=
   - secure: hgy64IGCJAusxiOmTrpZUUCq/z0+l06CtfP2xgMEMZVkBuH/b8XwPsGF299zGHqF6sh9mk8QPFHNLbfCfMi1NPwvnzK5RnTSi5xcNBqsTYwxFNW6QTDVpn8MuzLODeja6Mw8nonMK4kbJDJMhkn7QUE9CvKrSdXXovstSUM/EG/kTwPme6WO2En3DPoQdO2XMIvgd9vO0C4SQIhnLpbV0OhLguQq6qg80Mi3Ref2pP0YFdBTkoo2qXFeSNnEgp1kZ49Km58QmcCp7pBmNeTLqrVhg+6LjY8MqSCnLHWCfqqNvF/lAUIuniGv0YU4+qNpmVcbHLBY9KxXjV60fhjFkzurcdo6wBf3CXuFY2cuWiJ537iF91G0xjFeHlzBwWqpI/jL6oUzmAJk1mppC9hUvadMCAHx2YxA238ypBCX+JcR2cH5NUWwsk46eoGei1OChJz38AT5H+AopNQz+l6KWkD5LivYjTTHBHZQDddyB1wufdRIKYyDvUS/24sxVvy7rDDCgtEYFVekletKpCgpr/MCoyeCeFY5NR6UUEefwaQ1teDJHyFFBBdb5f/NJ7dGy21cCLqq7pgRuEojAXTNAYKstGaejAArYnzY+fzAeA1yxC3fwPib93fb/+XxX1qec7Plhav1pgTs/OeiVUai5Lr+0yfEs6BWZvZh7tcIRPQ=
   - secure: UMteErLt9UkfpKNCz7KqYuN7xtZaSe8KfuymvGaIicW6CXE2GxoGL7LCwdURpR/y6Wf/FNgcnu2/mC0aZc7ZWworCRRSmcOB0Vd+Bjj66p7cbf01o0IB/IvCTTxVggsC8AiIvd3TAWhuj4V/vE9xiesXrPf5fv+QZ4wOt6THYNknmZ+J2pTxFq/TmttBFHZ8mczweH7z78faSI00nIlrfpO0ukyoUJbeMHVL0qEnH5/n0qGSBKaY0ytS+i+yoE8X1/jS+G6Gu4wQvaFUqeKlPRi1/k0VYq/u3lwwnIJ3m8dkHEoQud+VjXBxRRCOILhWdlk8g2JTGIpcgylxjwhuOdJ+REZpkUCiGfqeHaagGqFB9TZTY3aP0EfRhl1rc174A0w1GXI5tntGxEoOPLN1FfbXiTvZrHGbFqOjgUYRLTpoKtrJfzNufYQmuu4oqVMQuXEo6rmpLRw1nx80JJ8Hm89PQ1QAkE5awrAKlCsWriPhP+HlvdvFWO36lYb6QVMdnujg95Bt0QOPX5YHzBSKUukRs2pzNpnzcHSRibD0cHwQDvZMflLY8Umc1GpIurTOnbG2WN6hzQIssgIzYLW9SYc9mvOeULX9SDYZaJWmkLGDk3F9PtN6tHyho1wlVt8l415SfsRqZRzdFDbLEATbDrH7/8zfM9O+orE4uhRK2bg=
+  - secure: Vbby+wQ6GeUrK+NyxwtzVHu3KE2auqQJu6XfiwNgw8O1OA8y+pJAEehdpij0NuF4vOrJFQh29M6NOpAJirWb9fZ9tFtCBUaaE3fCNHtU4GCSAog2pSsY+VBZIhFdXkT0IMNFIX9JEyj5WSESJYHjervIOpE81OMe7Rh2yDJb8fgDQn44aHaYYIdNRuNZ+T9K6kvwMuX+RRPKwv7aJfX9eIhKFybhKDbyHmhNtwGMsU8NYw1Ho9RWb6vA+JIoa/As9feSKIiD2YQFlH/Q6nGxbHl4h9Wbt0i/6Deq/jlerx/lAq3BySQ/xyhKeKsgatAc0akZe0+iM7/nnds/m/8twENohvMB0yh5qsmEMVwpGUDEE7Ags3v5qtSx1HHHr66BI0RhP62Jqff4jJVfoJhRKnm1QA8KfHhgsuiijnmJXaja7J4QIbHi5kaKKWzApfzLs2CQyaWuFec9Q52nlHURds9NwkftccOEiHOcqzVi5QdWnVkfxEgfD5fE7RzYZIgnpj+34cCMOqBS0p6xRmmUqFLAmfnzW3C+ix0bxRsDkjK3ltq0iQrkCnXFWYW3cRvlHyp6/ZUW0etCW7Q7XMUJoy06hLJCZURCqQI9FaHzg57b60v6l2wR8Lylw1D3xhBJ5Qc26xHpVNELJNQMpN7IsKhbT9QKgVkx9y96Gdbd+AA=
 after_success:
-# Publish releases on git tag
-  - test "${TRAVIS_PULL_REQUEST}" = 'false' &&
-    test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
-    ( test "${TRAVIS_SCALA_VERSION}" = "2.10.6" || test "${TRAVIS_SCALA_VERSION}" = "2.11.7" ) &&
-    sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" &&
-    TAG="$(git show-ref --tags | grep $(git rev-list -1 HEAD) | cut -d '/' -f 3)" &&
-    test ! -z "$TAG" && 
-    TAG="$TAG" sbt -no-colors ++$TRAVIS_SCALA_VERSION 'set version := System.getenv("TAG")' publish
-# Publish coveralls report
-  - test "${TRAVIS_PULL_REQUEST}" = 'false' &&
-    test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
-    test "${TRAVIS_SCALA_VERSION}" = "2.11.7" &&
-    sbt -no-colors ++$TRAVIS_SCALA_VERSION coveralls
+- test "${TRAVIS_PULL_REQUEST}" = 'false' &&
+  test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
+  ( test "${TRAVIS_SCALA_VERSION}" = "2.10.6" || test "${TRAVIS_SCALA_VERSION}" = "2.11.7" ) &&
+  sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" && 
+  test ! -z "$TRAVIS_TAG" &&
+  sbt -no-colors ++$TRAVIS_SCALA_VERSION 'set version := System.getenv("TRAVIS_TAG")' publish
+- test "${TRAVIS_PULL_REQUEST}" = 'false' &&
+  test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
+  test "${TRAVIS_SCALA_VERSION}" = "2.11.7" && 
+  sbt -no-colors ++$TRAVIS_SCALA_VERSION coveralls
+- test "${TRAVIS_PULL_REQUEST}" = 'false' &&
+  test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
+  test "${TRAVIS_SCALA_VERSION}" = "2.11.7" && 
+  sbt -no-colors ++$TRAVIS_SCALA_VERSION coverageReport codacyCoverage
