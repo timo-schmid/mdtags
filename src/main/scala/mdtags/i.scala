@@ -7,9 +7,7 @@ class i(val text: String) extends MdElement {
   override def toMarkdown(listIndent: Int = 0): String = sepChar + text + sepChar
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
-    "i(\n" +
-      indent(indentSpaces, "text = " + formatMarkupString(text)) + ",\n" +
-    ")"
+    "i(" + formatMarkupString(text) + ")"
 
 }
 
