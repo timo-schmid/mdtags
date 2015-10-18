@@ -23,8 +23,6 @@ private[mdtags] class TableBuilder( val headerRow: Boolean,
 
   private lazy val canBuild = expectedCols == actualCols
 
-  private lazy val maxRows = if(headerRow) rows + 1 else rows
-
   private def nextMap(mdInlineElement: MdInlineElement): Map[Int,Map[Int,MdInlineElement]] = {
     def subMap = map.getOrElse(currentRow, Map()) + ((currentCol, mdInlineElement))
     map + ((currentRow, subMap))
