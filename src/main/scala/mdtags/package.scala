@@ -63,7 +63,7 @@ package object mdtags {
     override def toMarkdown(listIndent: Int = 0): String =
       mdElements.map(_.toMarkdown()).mkString(" ")
 
-    override def convertToMarkup(implicit indentSpaces: Int): String = ???
+    override def convertToMarkup(implicit indentSpaces: Int): String = mdElements.map(_.convertToMarkup(indentSpaces)).mkString(" & ")
 
   }
 

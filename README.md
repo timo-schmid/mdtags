@@ -53,10 +53,11 @@ The code-element works too, but sadly it does not render correctly on github (in
 * ~~Lists~~
 * ~~Links~~
 * ~~Images~~
-* Tables
+* ~~Tables~~
 * ~~Horizontal Rule~~
 * ~~Line Breaks~~
 * ~~Youtube videos~~
+* ScalaDocs
 
 ***
 
@@ -70,6 +71,8 @@ The code-element works too, but sadly it does not render correctly on github (in
   * Lists
   * Horizontal Rule
   * Youtube videos
+* Switch over to specs2 - much more options available there
+* Build - generate & deploy source jar
 
 ## Build status
 

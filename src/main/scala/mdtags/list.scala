@@ -2,15 +2,15 @@ package mdtags
 
 private[mdtags] class list(childElements: Seq[MdListChild]) extends MdListChild with MdElementChild[list] {
 
-  override def mdElement = this
+  override def mdElement: list = this
 
-  val listPrefixChar = '*'
+  private val listPrefixChar = '*'
 
-  def listPrefix(listIndent: Int) = indent(listIndent, listPrefixChar + " ")
+  private def listPrefix(listIndent: Int) = indent(listIndent, listPrefixChar + " ")
 
   def childMarkdown(listIndent: Int): String = {
-    if(childElements.size > 0)
-      childElements.map{
+    if(childElements.size > 0) {
+      childElements.map {
         _ match {
           case list: list => list.toMarkdown(listIndent + 2)
           case mdElement: MdElement => {
@@ -18,8 +18,9 @@ private[mdtags] class list(childElements: Seq[MdListChild]) extends MdListChild 
           }
         }
       }.mkString("\n")
-    else
+    } else {
       ""
+    }
   }
 
   override def toMarkdown(listIndent: Int): String = childMarkdown(listIndent)
