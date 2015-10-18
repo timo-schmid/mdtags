@@ -30,9 +30,7 @@ class table(val headerRow: Boolean, val map: Map[Int,Map[Int,MdInlineElement]] =
       .mkString("| ", " | ", " |")
   ).toList
 
-  // private lazy val headerFieldString: String = List().padTo(colsWithLongestLength(s._1), "-").mkString
-
-  def headerField(length: Int): String =
+  private def headerField(length: Int): String =
     List().padTo(length, "-").mkString
 
   private lazy val headerRowString: String = Stream.from(0, 1).map(colsWithLongestLength(_)).map(headerField(_)).take(map.seq(0).size).mkString("| ", " | ", " |")
@@ -43,7 +41,20 @@ class table(val headerRow: Boolean, val map: Map[Int,Map[Int,MdInlineElement]] =
 
   override def toMarkdown(listIndent: Int = 0): String = allTableRows.mkString("\n")
 
-  def convertToMarkup(implicit indentSpaces: Int = 2): String = ???
+  private lazy val rows = if(headerRow) map.size - 1 else map.size
+
+  private lazy val cols = map(0).size
+
+  private def rowMarkup(indentSpaces: Int) = map.map {
+    _._2.map(_._2.convertToMarkup(indentSpaces)).mkString(", ")
+  }.map {
+    indent(indentSpaces, _)
+  }.mkString("\n", ",\n", "\n")
+
+  override def convertToMarkup(implicit indentSpaces: Int = 2): String =
+    s"table(${headerRow}, ${rows}, ${cols})(" +
+      rowMarkup(indentSpaces) +
+    s")"
 
 }
 

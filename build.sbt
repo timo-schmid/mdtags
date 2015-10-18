@@ -10,13 +10,9 @@ scalaVersion := "2.11.7"
 
 version := "1.0-alpha2"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
-
 libraryDependencies += "org.specs2" %% "specs2" % "2.4.2" % "test"
 
 publishMavenStyle := false
-
-// bintrayPublishSettings
 
 bintrayRepository := "sbt-plugins"
 

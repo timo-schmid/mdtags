@@ -62,6 +62,22 @@ class TableSpec extends Specification {
 
     }
 
+    "render the correct scala syntax" in {
+
+      table(true, 2, 2)(
+        "header 1", "header 2",
+        "1 / 1", "2 / 1",
+        "2 / 1", "2 / 2"
+      ).convertToMarkup() must equalTo(
+        """table(true, 2, 2)(
+          |  "header 1", "header 2",
+          |  "1 / 1", "2 / 1",
+          |  "2 / 1", "2 / 2"
+          |)""".stripMargin
+      )
+
+    }
+
     "throw an exception when rows is smaller than 1" in {
 
       table(true, 0, 1)().toMarkdown() must throwAn[IllegalArgumentException]

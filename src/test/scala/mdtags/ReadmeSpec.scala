@@ -1,9 +1,15 @@
 package mdtags
 
-class ReadmeSpec extends UnitSpec with Util {
+import org.specs2.mutable.Specification
 
-  "README" should "contain example code" in {
-    Readme.exampleCode.childs.size should be (6)
+class ReadmeSpec extends Specification {
+
+  "README" should {
+
+    "contain example code" in {
+      Readme.exampleCode.childs.size must equalTo(6)
+    }
+
   }
 
 }
