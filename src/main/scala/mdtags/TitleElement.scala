@@ -3,7 +3,7 @@ package mdtags
 /**
  * Represents any title
  */
-class TitleElement[T](val title: String, val titleLevel: Int) extends MdElement {
+private[mdtags] class TitleElement[T](val title: String, val titleLevel: Int) extends MdElement {
 
   lazy val hashes = (for(i <- 0 to titleLevel) yield "").mkString("#")
 

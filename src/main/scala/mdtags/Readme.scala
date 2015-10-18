@@ -65,10 +65,12 @@ object Readme {
       s("Lists"),
       s("Links"),
       s("Images"),
-      "Tables",
+      s("Tables"),
       s("Horizontal Rule"),
       s("Line Breaks"),
-      s("Youtube videos")
+      s("Youtube videos"),
+      "Increase test coverage",
+      "ScalaDocs"
     ),
     hr(),
     b("More advanced tasks"),
@@ -82,7 +84,9 @@ object Readme {
         "Lists",
         "Horizontal Rule",
         "Youtube videos"
-      )
+      ),
+      "Switch over to specs2 - much more options available there",
+      "Build - generate & deploy source jar"
     ),
     h2("Build status"),
     link(
