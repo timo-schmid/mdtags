@@ -1,6 +1,6 @@
 package mdtags
 
-class table(val headerRow: Boolean, val map: Map[Int,Map[Int,MdInlineElement]] = Map()) {
+class table(val headerRow: Boolean, val map: Map[Int,Map[Int,MdInlineElement]] = Map()) extends MdElement {
 
   private lazy val colsAsStrings: Map[Int, Map[Int, String]] = map.map {
     case (k, v) => (k, v.map {
@@ -20,8 +20,6 @@ class table(val headerRow: Boolean, val map: Map[Int,Map[Int,MdInlineElement]] =
     case (k, v) => (k, v.map(_._2).max)
   }
 
-  private lazy val longestStringLength: Int = map.values.flatMap(_.values).seq.map(_.toMarkdown(0).length).max
-
   private lazy val tableRows: List[String] = map.toSeq.sortBy(_._1).map(
     _._2
       .map(
@@ -37,20 +35,15 @@ class table(val headerRow: Boolean, val map: Map[Int,Map[Int,MdInlineElement]] =
   def headerField(length: Int): String =
     List().padTo(length, "-").mkString
 
-  def headerFields: Map[Int,String] =
-    Stream
-      .from(0, 1)
-      .take(colsWithLongestLength.size)
-      .map(i => i -> headerField(colsWithLongestLength(i)))
-      .toMap
-
   private lazy val headerRowString: String = Stream.from(0, 1).map(colsWithLongestLength(_)).map(headerField(_)).take(map.seq(0).size).mkString("| ", " | ", " |")
 
   private lazy val tableRowsWithHeader: List[String] = tableRows.take(1) ++ List(headerRowString) ++ tableRows.drop(1).take(tableRows.length - 1)
 
   private lazy val allTableRows: List[String] = if(headerRow) tableRowsWithHeader else tableRows
 
-  def toMarkdown: String = allTableRows.mkString("\n")
+  override def toMarkdown(listIndent: Int = 0): String = allTableRows.mkString("\n")
+
+  def convertToMarkup(implicit indentSpaces: Int = 2): String = ???
 
 }
 

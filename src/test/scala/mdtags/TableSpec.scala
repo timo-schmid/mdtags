@@ -12,7 +12,7 @@ class TableSpec extends Specification {
         "1 / 1", "1 / 2",
         "2 / 1", "2 / 2",
         "3 / 1", "3 / 2"
-      ).toMarkdown must equalTo(
+      ).toMarkdown() must equalTo(
         """| 1 / 1 | 1 / 2 |
           &| 2 / 1 | 2 / 2 |
           &| 3 / 1 | 3 / 2 |""".stripMargin('&')
@@ -26,7 +26,7 @@ class TableSpec extends Specification {
         "1 / 1", "1 / 2",
         "2 / 1", "2 / 2",
         "3 / 1", "3 / 2"
-      ).toMarkdown must equalTo(
+      ).toMarkdown() must equalTo(
         """| 1 / 1 | 1 / 2 |
           &| ----- | ----- |
           &| 2 / 1 | 2 / 2 |
@@ -41,11 +41,23 @@ class TableSpec extends Specification {
         "short", "short",
         "short", "looooooooooooooong",
         "short", "short"
-      ).toMarkdown must equalTo(
+      ).toMarkdown() must equalTo(
         """| short | short              |
           &| ----- | ------------------ |
           &| short | looooooooooooooong |
           &| short | short              |""".stripMargin('&')
+      )
+
+    }
+
+    "support all types of inline elements" in {
+
+      table(false, 2, 2)(
+        b("bold"), i("italic"),
+        s("strikethrough"), "an element" & b("with a bold string")
+      ).toMarkdown() must equalTo(
+        """| **bold**          | *italic*                          |
+          &| ~~strikethrough~~ | an element **with a bold string** |""".stripMargin('&')
       )
 
     }
@@ -55,7 +67,7 @@ class TableSpec extends Specification {
       table(true, 2, 2)(
         "row 1 / col 1", "row 1 / col2",
         "row 2 / col 1" /* this field is missing */
-      ).toMarkdown must throwA[IllegalStateException]
+      ).toMarkdown() must throwA[IllegalStateException]
 
     }
 
@@ -65,7 +77,7 @@ class TableSpec extends Specification {
         "row 1 / col 1", "row 1 / col2",
         "row 2 / col 1", "row 2 / col2",
         "row 3 / col 1" // this field is too much
-      ).toMarkdown must throwA[IllegalStateException]
+      ).toMarkdown() must throwA[IllegalStateException]
 
     }
 

@@ -69,6 +69,7 @@ object Readme {
       s("Horizontal Rule"),
       s("Line Breaks"),
       s("Youtube videos"),
+      "Increase test coverage",
       "ScalaDocs"
     ),
     hr(),

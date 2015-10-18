@@ -57,6 +57,7 @@ The code-element works too, but sadly it does not render correctly on github (in
 * ~~Horizontal Rule~~
 * ~~Line Breaks~~
 * ~~Youtube videos~~
+* Increase test coverage
 * ScalaDocs
 
 ***

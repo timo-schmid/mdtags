@@ -1,6 +1,6 @@
 package mdtags
 
-class TableBuilder( val headerRow: Boolean,
+private[mdtags] class TableBuilder( val headerRow: Boolean,
                     val rows: Int,
                     val cols: Int,
                     val map: Map[Int,Map[Int,MdInlineElement]] = Map(),
