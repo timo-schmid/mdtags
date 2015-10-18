@@ -4,10 +4,10 @@ class hr(val separatorChar: Char = '*') extends MdElement {
 
   override def toMarkdown(listIndent: Int = 0): String = pad(3, separatorChar)
 
-  lazy val markupSeparatorChar = if(separatorChar == '*') { "" } else { "separatorChar = '" + separatorChar + "'" }
+  lazy val markupSeparatorChar = if(separatorChar == '*') { "" } else { "'" + separatorChar + "'" }
 
   override def convertToMarkup(implicit indentSpaces: Int): String =
-    "br(" + markupSeparatorChar + ")"
+    "hr(" + markupSeparatorChar + ")"
 
 }
 
