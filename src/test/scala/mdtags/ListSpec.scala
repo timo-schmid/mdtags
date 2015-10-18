@@ -48,6 +48,21 @@ class ListSpec extends Specification {
       )
     }
 
+    "render scala syntax correctly" in {
+      list(
+        "first item",
+        "second item" & b("with bold text"),
+        "third item"
+      ).convertToMarkup() must equalTo(
+        """list(
+          |  "first item",
+          |  "second item" & b("with bold text"),
+          |  "third item"
+          |)""".stripMargin
+      )
+
+    }
+
   }
 
 }

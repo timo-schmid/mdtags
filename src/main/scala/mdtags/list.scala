@@ -19,7 +19,10 @@ private[mdtags] class list(childElements: Seq[MdListChild]) extends MdListChild 
 
   override def toMarkdown(listIndent: Int): String = childMarkdown(listIndent)
 
-  override def convertToMarkup(implicit indentSpaces: Int = 2): String = ???
+  override def convertToMarkup(implicit indentSpaces: Int = 2): String =
+    "list(" +
+      childElements.map(_.convertToMarkup(indentSpaces)).map(indent(indentSpaces, _)).mkString("\n", ",\n", "\n") +
+    ")"
 
 }
 
